@@ -20,5 +20,5 @@ def parse_env_file(file):
             if line.startswith('#') or line.strip().__len__() == 0:
                 continue
             # otherwise treat lines as environment variables in a KEY=VALUE combo
-            key, value = line.split('=')
+            key, value = line.split('=', maxsplit=1)
             environ[key.strip()] = value.strip()
